@@ -11,7 +11,7 @@ package com.curso.vendingmachine;
 public class VendingMachine {
 
     public static void main(String[] args) {
-        Machine machine = new Machine();
+        CokeMachine machine = new CokeMachine();
         machine.run();
     }
 }

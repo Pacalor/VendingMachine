@@ -11,10 +11,12 @@ package com.curso.vendingmachine;
 public class Product {
     private float price;
     private String name;
-
-    public Product(float price, String name) {
+    private int cantidad;
+    
+    public Product(float price, String name, int cantidad) {
         this.price = price;
         this.name = name;
+        this.cantidad = cantidad;
     }
 
     public float getPrice() {
@@ -29,10 +31,27 @@ public class Product {
         return name;
     }
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
-
+    
+    public void substract() throws Exception{
+        if(cantidad>0){
+            cantidad--;
+        }else{
+            throw new IndexOutOfBoundsException("There is not product.");  
+        }
+    }
+    
+    
     @Override
     public String toString() {
         return "Product{" + "price=" + price + ", name=" + name + '}';
